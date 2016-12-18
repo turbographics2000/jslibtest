@@ -5,7 +5,6 @@ var MyPlugin = {
 
     $receiveDataFromUnity: function(type, heap, ptr, size) {
         var strVals = [];
-        debugger;
         heap.subarray(ptr / heap.BYTES_PER_ELEMENT, (ptr / heap.BYTES_PER_ELEMENT) + size).forEach(function(val) {
             strVals.push('' + val);
         });
@@ -14,17 +13,18 @@ var MyPlugin = {
 
     $sendDataToUnity: function(data, heap, callback) {
         var writeData = typeof data === 'string' ? (new TextEncoder).encode(data + String.fromCharCode(0)) : data;
-        var buffer = _malloc(writeData.length * (data.BYTES_PER_ELEMENT || 1));
+        var buffer = _malloc(writeData.byteLength);
         debugger;
         heap.set(writeData, buffer / (data.BYTES_PER_ELEMENT || 1));
         Runtime.dynCall('vii', callback, [buffer, writeData.length]);
         _free(buffer);
+
     },
 
-    initCallback: function(onText, onByteArray, onSByteArray, onShortArray, onUShortArray, onIntArray, onUIntArray, onFloatArray, onDoubleArray) {
+    initCallback: function(onText, onSByteArray, onByteArray, onShortArray, onUShortArray, onIntArray, onUIntArray, onFloatArray, onDoubleArray) {
         cbobj.onText = onText;
-        cbobj.onByteArray = onByteArray;
         cbobj.onSByteArray = onSByteArray;
+        cbobj.onByteArray = onByteArray;
         cbobj.onShortArray = onShortArray;
         cbobj.onUShortArray = onUShortArray;
         cbobj.onIntArray = onIntArray;

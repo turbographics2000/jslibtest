@@ -75,7 +75,7 @@ public class jslibbridge : MonoBehaviour {
     }
 
     [MonoPInvokeCallback(typeof(dlgReceiveSByteArrayData))]
-    static void OnSByteArray([MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.I1, SizeParamIndex = 1)] sbyte[] data, int length)
+    static void OnSByteArray(sbyte[] data, int length)
     {
         debuglogReceiveData<sbyte>("sbyte", data, length);
     }
