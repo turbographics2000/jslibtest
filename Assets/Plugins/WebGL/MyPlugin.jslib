@@ -68,14 +68,14 @@ var MyPlugin = {
     testSendDataToUnity: function() {
         sendDataToUnity('hoge_fuga_piyo', HEAPU8, cbobj.onText);
         sendDataToUnity('abc𩸽def', HEAPU8, cbobj.onText);
-        sendDataToUnity(new Int8Array([9, 1, 2, 3]), HEAP8, cbobj.onSByteArray);
-        sendDataToUnity(new Uint8Array([9, 1, 2, 3]), HEAPU8, cbobj.onByteArray);
-        sendDataToUnity(new Int16Array([9, 1, 2, 3]), HEAP16, cbobj.onShortArray);
-        sendDataToUnity(new Uint16Array([9, 1, 2, 3]), HEAPU16, cbobj.onUShortArray);
-        sendDataToUnity(new Int32Array([9, 1, 2, 3]), HEAP32, cbobj.onIntArray);
-        sendDataToUnity(new Uint32Array([9, 1, 2, 3]), HEAPU32, cbobj.onUIntArray);
-        sendDataToUnity(new Float32Array([9, 1, 2, 3]), HEAPF32, cbobj.onFloatArray);
-        sendDataToUnity(new Float64Array([9, 1, 2, 3]), HEAPF64, cbobj.onDoubleArray);
+        sendDataToUnity(new Int8Array([1, 2, 3]), HEAP8, cbobj.onSByteArray);
+        sendDataToUnity(new Uint8Array([1, 2, 3]), HEAPU8, cbobj.onByteArray);
+        sendDataToUnity(new Int16Array([1, 2, 3]), HEAP16, cbobj.onShortArray);
+        sendDataToUnity(new Uint16Array([1, 2, 3]), HEAPU16, cbobj.onUShortArray);
+        sendDataToUnity(new Int32Array([1, 2, 3]), HEAP32, cbobj.onIntArray);
+        sendDataToUnity(new Uint32Array([1, 2, 3]), HEAPU32, cbobj.onUIntArray);
+        sendDataToUnity(new Float32Array([1, 2, 3]), HEAPF32, cbobj.onFloatArray);
+        sendDataToUnity(new Float64Array([1, 2, 3]), HEAPF64, cbobj.onDoubleArray);
     }
 };
 
